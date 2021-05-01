@@ -1,0 +1,90 @@
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\csc.exe
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\vbc.exe
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll.config
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.pdb
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csprojResolveAssemblyReference.cache
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.dll
+C:\Users\Maryd.TECHKNOWSOLVE\OneDrive\Documents\ASPNET4.6.Rewrite\bookapps\ch17\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.pdb
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\csc.exe
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Collections.Immutable.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Reflection.Metadata.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\vbc.exe
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe.config
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll.config
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.pdb
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csprojResolveAssemblyReference.cache
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.dll
+C:\aspnet46_cs\book_applications\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.pdb
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\csc.exe
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\vbc.exe
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll.config
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.pdb
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csproj.CopyComplete
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.pdb
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\it\EntityFramework.resources.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\csc.exe
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\vbc.exe
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll.config
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Ch17CategoryMaintenance.pdb
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\bin\it\EntityFramework.resources.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.csproj.CopyComplete
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.dll
+C:\Users\Admin\Desktop\Nuova cartella\Ch17CategoryMaintenance\Ch17CategoryMaintenance\obj\Debug\Ch17CategoryMaintenance.pdb
