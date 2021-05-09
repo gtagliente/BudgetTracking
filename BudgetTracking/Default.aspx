@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Ch17CategoryMaintenance.Default" MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BudgetTracking.Default" MasterPageFile="~/Site1.Master" %>
 
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
@@ -6,7 +6,7 @@
     <div class="container">
         <%--<header class="jumbotron"><%-- image set in site.css </header>--%>
         <main>
-            <form id="form1" runat="server" class="form-horizontal">
+            <form id="form1" class="form-horizontal">
 
                 <div class="row">
                     <div class="col-xs-12">

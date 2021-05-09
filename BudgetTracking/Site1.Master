@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Ch17CategoryMaintenance.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="BudgetTracking.Site1" %>
 
 <!DOCTYPE html>
 
@@ -29,78 +29,122 @@
 
 </head>
 <body>
+    <form runat="server">
+        <div class="wrapper">
+            <asp:LoginView runat="server" ViewStateMode="Disabled">
+                <AnonymousTemplate>
 
-    <div class="wrapper">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Sidebar</h3>
+                    <nav id="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Sidebar</h3>
+                        </div>
+
+                        <ul class="list-unstyled components">
+                            <li>
+                                <a href="#NoLoggedSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Account</a>
+                                <ul class="collapse list-unstyled" id="NoLoggedSubMenu">
+                                    <li>
+                                        <a href="/Login/Login">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Login/Register">Registrazione</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </AnonymousTemplate>
+                <LoggedInTemplate>
+
+                    <nav id="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Sidebar</h3>
+                        </div>
+
+                        <ul class="list-unstyled components">
+                            <li>
+                                <a href="Default.aspx">Lista spese</a>
+                            </li>
+                            <li>
+                                <a href="InserisciSpesa.aspx">Editing</a>
+                            </li>
+                            <li>
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Statistiche</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
+                                    <li>
+                                        <a href="#">Pareggi</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Medie</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#LoggedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hello, <%: HttpContext.Current.User.Identity.Name  %> !</a>
+                                <ul class="collapse list-unstyled" id="LoggedSubmenu">
+
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                    <li>
+                                        <a href="#">Altro</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                </LoggedInTemplate>
+            </asp:LoginView>
+
+            <div id="content">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                    </div>
+                </nav>
+
+                <asp:ContentPlaceHolder ID="OrdersContentPlaceHolder" runat="server">
+                    <p>
+                        <br />
+                    </p>
+                </asp:ContentPlaceHolder>
             </div>
-
-            <ul class="list-unstyled components">
-                <li>
-                    <a href="Default.aspx">Lista spese</a>
-                </li>
-                <li>
-                    <a href="InserisciSpesa.aspx">Editing</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Statistiche</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Pareggi</a>
-                        </li>
-                        <li>
-                            <a href="#">Medie</a>
-                        </li>
-
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                </div>
-            </nav>
-
-            <asp:ContentPlaceHolder ID="OrdersContentPlaceHolder" runat="server">
-                <p>
-                    <br />
-                </p>
-            </asp:ContentPlaceHolder>
         </div>
-    </div>
 
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <!-- Popper.JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/autonumeric/2.0.0/autoNumeric.min.js"></script>
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
 
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/autonumeric/2.0.0/autoNumeric.min.js"></script>
+                });
+                $('.datepicker-field').datepicker();
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-
+                $(".numberInput").autoNumeric('init', { currencySymbol: '€', unformatOnSubmit: true });
             });
-            $('.datepicker-field').datepicker();
+        </script>
+    </form>
 
-            $(".numberInput").autoNumeric('init', { currencySymbol: '€', unformatOnSubmit: true });
-        });
-    </script>
 </body>
 </html>

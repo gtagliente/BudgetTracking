@@ -8,8 +8,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.ComponentModel;
-
-
+using System.Web;
+using Microsoft.AspNet.Identity;
 
 [DataObject(true)]
 public class OrderDB
@@ -20,8 +20,8 @@ public class OrderDB
     public List<Order> GetOrders()
     {
         orderList = new List<Order>();
-        string sql = "SELECT System_Id,Date,Order_Name,Order_Amount,Author "
-            + "FROM Orders ORDER BY Date DESC";
+        string sql = "SELECT O.System_Id,O.Date,O.Order_Name,O.Order_Amount,U.UserName Author "
+            + "FROM Orders O Inner join AspNetUsers U on (O.Author = U.ID) ORDER BY Date DESC";
         using (SqlConnection con = new SqlConnection(GetConnectionString()))
         {
             using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -51,6 +51,7 @@ public class OrderDB
         string sql = "INSERT INTO Orders "
             + "(Date, Order_Name, Order_Amount,Author) "
             + "VALUES (@Date, @OrderName, @OrderAmount,@Author)";
+        
         using (SqlConnection con = new SqlConnection(GetConnectionString()))
         {
             using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -58,7 +59,7 @@ public class OrderDB
                 cmd.Parameters.AddWithValue("Date", order.OrderDate);
                 cmd.Parameters.AddWithValue("OrderName", order.OrderName);
                 cmd.Parameters.AddWithValue("OrderAmount", order.OrderAmount);
-                cmd.Parameters.AddWithValue("Author", order.OrderAuthor);
+                cmd.Parameters.AddWithValue("Author", HttpContext.Current.User.Identity.GetUserId());
                 con.Open();
                 cmd.ExecuteNonQuery();
             }

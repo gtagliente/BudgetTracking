@@ -7,7 +7,7 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ch17CategoryMaintenance
+namespace BudgetTracking
 {
 
 

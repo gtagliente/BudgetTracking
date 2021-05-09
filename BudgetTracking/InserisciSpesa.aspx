@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InserisciSpesa.aspx.cs" Inherits="Ch17CategoryMaintenance.InserisciSpesa" MasterPageFile="~/Site1.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InserisciSpesa.aspx.cs" Inherits="BudgetTracking.InserisciSpesa" MasterPageFile="~/Site1.Master" %>
 
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
@@ -9,7 +9,7 @@
 
 
     <div class="row">
-        <form id="form1" runat="server" class="main-login-form">
+        <form id="form1" class="main-login-form">
 
             <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True"
                 DataSourceID="ObjectDataSource1" AutoGenerateRows="False" 
@@ -62,15 +62,11 @@
                             </div>
                         </InsertItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField>
+                  <%-- <asp:TemplateField>
                         <InsertItemTemplate>
                             <div class="col-xl-12 d-flex">
                                 <div class="form-group" style="width:100%">
-                                    <label for="txtAutore" class="sr-only">Autore</label>
-                                    <%--                                    
-                                        <asp:TextBox runat="server" ID="txtAutore" CssClass="form-control" Text='<%#  Bind("OrderAuthor") %>' placeholder="Autore"></asp:TextBox>
-                                    </div>--%>
-
+                                  
 
                                     <div class="col-md-12 col-sm-12 d-inline-block">
                                         <asp:DropDownList ID="ColorList"
@@ -89,7 +85,7 @@
                                 </div>
                             </div>
                         </InsertItemTemplate>
-                    </asp:TemplateField>
+                    </asp:TemplateField>--%>
                     <asp:TemplateField>
                         <InsertItemTemplate>
                             <div class="col-xl-12 d-flex">

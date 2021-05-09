@@ -7,21 +7,12 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ch17CategoryMaintenance
+namespace BudgetTracking
 {
 
 
     public partial class Default
     {
-
-        /// <summary>
-        /// Controllo form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Controllo GridView1.
@@ -56,11 +47,11 @@ namespace Ch17CategoryMaintenance
         /// <remarks>
         /// Proprietà generata automaticamente.
         /// </remarks>
-        public new Ch17CategoryMaintenance.Site1 Master
+        public new BudgetTracking.Site1 Master
         {
             get
             {
-                return ((Ch17CategoryMaintenance.Site1)(base.Master));
+                return ((BudgetTracking.Site1)(base.Master));
             }
         }
     }
