@@ -10,6 +10,9 @@ using System.Data.SqlClient;
 using System.ComponentModel;
 using System.Web;
 using Microsoft.AspNet.Identity;
+using System.Data.Common;
+using System.Net.Configuration;
+using BudgetTracking.Logic;
 
 [DataObject(true)]
 public class OrderDB
@@ -17,11 +20,16 @@ public class OrderDB
     public List<Order> orderList;
 
     [DataObjectMethod(DataObjectMethodType.Select)]
-    public List<Order> GetOrders()
+    public List<Order> GetOrders(List<IFilterController> filterList)
     {
         orderList = new List<Order>();
-        string sql = "SELECT O.System_Id,O.Date,O.Order_Name,O.Order_Amount,U.UserName Author "
-            + "FROM Orders O Inner join AspNetUsers U on (O.Author = U.ID) ORDER BY Date DESC";
+
+        string sql = " SELECT O.System_Id,O.Date,O.Order_Name,O.Order_Amount,U.UserName Author "
+            + " FROM Orders O Inner join AspNetUsers U on (O.Author = U.ID) ";
+        foreach (IFilterController filter in filterList)
+            sql += filter.AppendFilters("O");
+
+        sql += " ORDER BY Date DESC  ";
         using (SqlConnection con = new SqlConnection(GetConnectionString()))
         {
             using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -67,24 +75,17 @@ public class OrderDB
     }
 
     [DataObjectMethod(DataObjectMethodType.Delete)]
-    public static int DeleteCategory(Order order)
+    public  int DeleteOrder(Order order)
     {
         int deleteCount = 0;
         string sql = "DELETE FROM Orders "
-            + "WHERE System_Id = @System_Id "
-            + "AND Date = @Date "
-            + "AND OrderName = @OrderName"
-            + "AND OrderAmount = @OrderAmount"
-            + "AND Author = @Author";
+            + " WHERE System_Id = @System_Id ";
+            
         using (SqlConnection con = new SqlConnection(GetConnectionString()))
         {
             using (SqlCommand cmd = new SqlCommand(sql, con))
             {
                 cmd.Parameters.AddWithValue("System_Id", order.OrderId);
-                cmd.Parameters.AddWithValue("Date", order.OrderDate);
-                cmd.Parameters.AddWithValue("OrderName", order.OrderName);
-                cmd.Parameters.AddWithValue("OrderAmount", order.OrderAmount);
-                cmd.Parameters.AddWithValue("Author", order.OrderAuthor);
                 con.Open();
                 deleteCount = cmd.ExecuteNonQuery();
             }
@@ -92,37 +93,51 @@ public class OrderDB
         return deleteCount;
     }
 
-    /* [DataObjectMethod(DataObjectMethodType.Update)]
-     public static int UpdateCategory(Order original_Order,
-         Order order)
-     {
-         int updateCount = 0;
-         string sql = "UPDATE Orders "
-             + "SET  = @ShortName, "
-             + "LongName = @LongName "
-             + "LongName = @LongName "
-             + "LongName = @LongName "
-             + "WHERE CategoryID = @original_CategoryID "
-             + "AND ShortName = @original_ShortName "
-             + "AND LongName = @original_LongName";
-         using (SqlConnection con = new SqlConnection(GetConnectionString()))
-         {
-             using (SqlCommand cmd = new SqlCommand(sql, con))
-             {
-                 cmd.Parameters.AddWithValue("ShortName", category.ShortName);
-                 cmd.Parameters.AddWithValue("LongName", category.LongName);
-                 cmd.Parameters.AddWithValue("original_CategoryID", 
-                     original_Category.CategoryID);
-                 cmd.Parameters.AddWithValue("original_ShortName",
-                     original_Category.ShortName);
-                 cmd.Parameters.AddWithValue("original_LongName",
-                     original_Category.LongName);
-                 con.Open();
-                 updateCount = cmd.ExecuteNonQuery();
-             }
-         }
-         return updateCount;
-     }*/
+    [DataObjectMethod(DataObjectMethodType.Insert)]
+    public static int InsertStorno(Storno storno)
+    {
+        int insertCount = 0;
+        string sql = " INSERT INTO STORNI (DATE,FROM_AUTHOR,TO_AUTHOR,ORDER_AMOUNT) "
+                    + " VALUES(@DATA,@FROM_AUTHOR,@TO_AUTHOR,@ORDER_AMOUNT) ";
+
+        DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.SqlClient");
+        using (DbConnection cn = provider.CreateConnection())
+        {
+            cn.ConnectionString = GetConnectionString();
+            cn.Open();
+            DbCommand cmd = provider.CreateCommand();
+            cmd.CommandText = sql;
+
+            DbParameter param = cmd.CreateParameter();
+            param.ParameterName = "DATA";
+            param.DbType = DbType.Date;
+            param.Value = storno.Data;
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.ParameterName = "FROM_AUTHOR";
+            param.DbType = DbType.String;
+            param.Value = storno.FromAuthor;
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.ParameterName = "TO_AUTHOR";
+            param.DbType = DbType.String;
+            param.Value = storno.ToAuthor;
+            cmd.Parameters.Add(param);
+
+            param = cmd.CreateParameter();
+            param.ParameterName = "ORDER_AMOUNT";
+            param.DbType = DbType.Double;
+            param.Value = storno.OrderAmount;
+            cmd.Parameters.Add(param);
+            cmd.Connection = cn;
+            insertCount = cmd.ExecuteNonQuery();
+            cn.Close();
+        }
+        
+        return insertCount;
+    }
 
     private static string GetConnectionString()
     {

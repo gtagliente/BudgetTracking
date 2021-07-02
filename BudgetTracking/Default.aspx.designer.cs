@@ -15,6 +15,24 @@ namespace BudgetTracking
     {
 
         /// <summary>
+        /// Controllo flt_OrderDataFrom.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataFrom;
+
+        /// <summary>
+        /// Controllo flt_OrderDataTo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataTo;
+
+        /// <summary>
         /// Controllo GridView1.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace BudgetTracking
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// Controllo dlBalance.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList dlBalance;
 
         /// <summary>
         /// Proprietà Master.

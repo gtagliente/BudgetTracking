@@ -1,28 +1,107 @@
-﻿using System;
+﻿using BudgetTracking.Logic;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Windows.Forms;
 
 namespace BudgetTracking
 {
     public partial class Default : System.Web.UI.Page
     {
+        public int deletingID;
         public TMP_Average[] averageArray;
+        public ObjectDataSource StatsDataSource;
+        public ObjectDataSource OrdersDataSource;
+        public JavaScriptSerializer serializer1;
+        List<IFilterController> currentFilters = new List<IFilterController>()
+                                                    { new SearchFilterController(
+                                                                new SearchFilter
+                                                                {
+                                                                    OrderDataFrom =Convert.ToDateTime("2021-05-01"),
+                                                                    OrderDataTo = DateTime.Now
+                                                                })
+                                                    };
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
-            // test();
+            if (IsPostBack == false)
+            {
+                ViewState["FiltersList"] = new List<IFilterController>()
+                                                    { new SearchFilterController(
+                                                                new SearchFilter
+                                                                {
+                                                                    OrderDataFrom =Convert.ToDateTime("2021-05-01"),
+                                                                    OrderDataTo = DateTime.Now
+                                                                })
+                                                    };
+            }
+
+            serializer1 = new JavaScriptSerializer();
+            serializer1.RegisterConverters(new[] { new ExtendedJavaScriptConverter<SearchFilter>() });
+
+            BindAverage();
+            BindOrders();
+            
         }
 
+//        TuoGridview.PageIndex = e.NewPageIndex
+//TuoGridview.databind
+
+        private void BindAverage()
+        {
+            StatsDataSource = new ObjectDataSource();
+            StatsDataSource.ID = "StatsDataSource";
+            StatsDataSource.DataObjectTypeName = "AverageModel";
+            StatsDataSource.SelectMethod = "GetStats";
+            StatsDataSource.TypeName = "StatsDB";
+            //StatsDataSource.FilterExpression = "Stringa filtro";
+            //StatsDataSource.SelectParameters.Add("param", "ciao");
+            //StatsDataSource.Selecting += SqlSource_Selecting;
+            StatsDataSource.DataBind();
+            dlBalance.DataSource = StatsDataSource;
+            dlBalance.DataBind();
+        }
+
+        public void BindOrders()
+        {
+            OrdersDataSource = new ObjectDataSource();
+            OrdersDataSource.ID = "OrdersDataSource";
+           // OrdersDataSource.DataObjectTypeName = "Order";
+            OrdersDataSource.SelectMethod = "GetOrders";
+            OrdersDataSource.TypeName = "OrderDB";
+            //OrdersDataSource.FilterExpression = "Stringa filtro";
+            //OrdersDataSource.SelectParameters.Add("param", "ciao");
+            OrdersDataSource.Selecting += SqlSource_Selecting;
+            OrdersDataSource.DeleteMethod += "DeleteOrder";
+            OrdersDataSource.Deleting += this.Sql_Deleting;
+            OrdersDataSource.DataBind();
+            GridView1.DataSource = OrdersDataSource;
+            GridView1.RowDeleting += RowDeleting;
+            //GridView1.DeleteMethod = "DeleteOrder";
+            GridView1.DataBind();
+        }
+
+        public void RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            OrdersDataSource.DeleteParameters.Add("index", GridView1.DataKeys[e.RowIndex].Value.ToString());
+            OrdersDataSource.Delete();
+            Response.Redirect(Request.RawUrl);
+            //GridView1.DataKeys[e.RowIndex].Value
+        }
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataBind();
+        }
         protected void GridView1_PreRender(object sender, EventArgs e)
         {
-            GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
+           // GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         protected void ObjectDataSource1_GetAffectedRows(object sender, ObjectDataSourceStatusEventArgs e)
@@ -30,101 +109,29 @@ namespace BudgetTracking
             e.AffectedRows = Convert.ToInt32(e.ReturnValue);
         }
 
-        protected void test()
-         {
-            Double sum=0;
-
-            int OrderAmountcellIndex= -1;
-            int a = GridView1.PageIndex;
-            int r = 0;
-
-            //GridView1.Rows[0].Cells.Cast<ControlCollection>().Where
-            for (int k=0; k< GridView1.Rows[0].Cells.Count; k++) 
-                if (((System.Web.UI.WebControls.DataControlFieldCell)GridView1.Rows[0].Cells[k]).ContainingField.HeaderText == "Totale") { OrderAmountcellIndex = k; break; }
-
-
-            GridView1.AllowPaging = false;
-            GridView1.DataBind();
-            List < TMP_Average > list = new List<TMP_Average>();
-
-            for (int i = 0; i < GridView1.Rows.Count; i++)
-            {
-                sum += Convert.ToDouble(GridView1.Rows[i].Cells[OrderAmountcellIndex].Text);
-                list.Add(new TMP_Average
-                {
-                    Importo = Convert.ToDouble(GridView1.Rows[i].Cells[OrderAmountcellIndex].Text),
-                    Author = GridView1.Rows[i].Cells[4].Text
-                });
-                r++;
-            }
-
-            // You can select some checkboxex on gridview over here..
-            var authorsList = list
-                            .GroupBy(x => x.Author)
-                            .Select(y => new TMP_Average
-                            {
-                                Author = y.First().Author,
-                                Importo = (sum / 3) - y.Sum(c => c.Importo),
-                                Percentuale = Math.Abs((y.Sum(c => c.Importo) - (sum / 3)) / sum) * 100,
-                                Positivo = (y.Sum(c => c.Importo) - (sum / 3)) / sum > 0 ? true : false
-                            }).ToList();
-
-           
-
-
-            DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.SqlClient");
-            using (DbConnection cn = provider.CreateConnection())
-            {
-                DataTable dt = new DataTable();
-                cn.ConnectionString = ConfigurationManager.ConnectionStrings
-                         ["BudgetTrackingConnection"].ConnectionString;
-
-                String sql = "SELECT * FROM STORNI ";
-                //DataTable dt = utility.Custom_Query("SELECT * FROM " + tablename + " WHERE ISNULL(STATO,'') = ''");
-
-                DbCommand cmd = cn.CreateCommand();
-                cmd.CommandText = sql;
-
-                DbDataAdapter da = provider.CreateDataAdapter();
-                da.SelectCommand = cmd;
-                da.Fill(dt);
-
-                List<Storno> storniList = new List<Storno>();
-
-                storniList = (from DataRow dr in dt.Rows
-                              select new Storno()
-                              {
-                                  SystemId = Convert.ToInt32(dr["SYSTEM_ID"]),
-                                  Data = Convert.ToDateTime(dr["DATE"]),
-                                  FromAuthor = Convert.ToString(dr["FROM_AUTHOR"]),
-                                  ToAuthor = Convert.ToString(dr["TO_AUTHOR"]),
-                                  OrderAmount = Convert.ToDouble(dr["ORDER_AMOUNT"])
-                              }).ToList();
-                
-                TMP_Average tmp;
-                foreach (Storno storno in storniList)
-                {
-                    tmp = authorsList.FirstOrDefault(l => l.Author == storno.FromAuthor);
-                    tmp.Importo -= storno.OrderAmount;
-
-                    tmp = authorsList.FirstOrDefault(l => l.Author == storno.ToAuthor);
-                    tmp.Importo += storno.OrderAmount;
-                }
-
-                authorsList.ForEach(y => y.Percentuale = (Math.Abs(y.Importo) / sum) * 100);
-
-                this.averageArray = authorsList.ToArray();
-
-
-            }
-
-
-
-
-                GridView1.AllowPaging = true;
-            GridView1.DataBind();
-
+        public void Sql_Deleting(object src, ObjectDataSourceMethodEventArgs e)
+        {
+            Order order = new Order { OrderId = Convert.ToInt32(e.InputParameters["index"]) };
+            e.InputParameters.Clear();
+            e.InputParameters["order"] = order;
         }
+
+        public void SqlSource_Selecting(object src, ObjectDataSourceSelectingEventArgs e)
+        {
+
+            if (Request.Form["__EVENTTARGET"] == "FiltersSearch")
+            {
+                string jsonArgs = Request.Form["__EVENTARGUMENT"];
+
+               
+                SearchFilter flt = serializer1.Deserialize<SearchFilter>(jsonArgs);
+                ViewState["FiltersList"] =  new List<IFilterController>()
+                    { new SearchFilterController(flt)};
+            }
+            
+            e.InputParameters["filterList"] = (List<IFilterController>)ViewState["FiltersList"];
+        }
+
 
         protected void GridView1_RowUpdated(object sender, GridViewUpdatedEventArgs e)
         {

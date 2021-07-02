@@ -15,8 +15,13 @@
     <%--<asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>--%>
     <!-- Bootstrap CSS CDN -->
+    
+    <%--<link href="Content/bootstrap.cosmo.min.css" rel="stylesheet" />--%>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 
     <link rel="stylesheet" href="Content/style2.css">
     <!-- Our Custom CSS -->
@@ -67,19 +72,20 @@
                                 <a href="Default.aspx">Lista spese</a>
                             </li>
                             <li>
-                                <a href="InserisciSpesa.aspx">Editing</a>
-                            </li>
-                            <li>
-                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Statistiche</a>
-                                <ul class="collapse list-unstyled" id="pageSubmenu">
+
+                                <a href="#EditSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Inserisci</a>
+                                <ul class="collapse list-unstyled" id="EditSubmenu">
                                     <li>
-                                        <a href="#">Pareggi</a>
+                                        <a href="InserisciSpesa.aspx">Spesa</a>
                                     </li>
                                     <li>
-                                        <a href="#">Medie</a>
+                                        <a href="InserisciStorno.aspx">Storno</a>
                                     </li>
 
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="Statistiche.aspx">Statistiche</a>
                             </li>
                             <li>
                                 <a href="#LoggedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hello, <%: HttpContext.Current.User.Identity.Name  %> !</a>
@@ -139,10 +145,30 @@
                     $('#sidebar').toggleClass('active');
 
                 });
-                $('.datepicker-field').datepicker();
+                $('.datepicker-field').datepicker({ dateFormat: 'dd/mm/yy' });
 
                 $(".numberInput").autoNumeric('init', { currencySymbol: '€', unformatOnSubmit: true });
+
+                const an = new AutoNumeric('#txtImporto', { currencySymbol: '€', unformatOnSubmit: true });
+                console.log(an.rawValue);
             });
+
+            function getRawNumerics() {
+              
+                    var form = $(this);
+                    $('.numberInput').each(function (i) {
+                        var self = $(this);
+                        try {
+                            var v = self.autoNumeric('get');
+                            self.autoNumeric('destroy');
+                            self.val(v);
+                        } catch (err) {
+                            console.log("Not an autonumeric field: " + self.attr("name"));
+                        }
+                    });
+                    return true;
+            }
+
         </script>
     </form>
 
