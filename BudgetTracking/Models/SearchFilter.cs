@@ -7,6 +7,8 @@ using System.Web;
 [Serializable()]
 public class SearchFilter
 {
-    public DateTime OrderDataFrom { get; set; }
-    public DateTime OrderDataTo { get; set; }
+    public DateTime? OrderDataFrom { get; set; }
+    public DateTime? OrderDataTo { get; set; }
+    public DateTime? OrderDataCreationFrom { get; set; }
+    public DateTime? OrderDataCreationTo { get; set; }
 }

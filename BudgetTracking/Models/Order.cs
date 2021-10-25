@@ -12,4 +12,5 @@ public class Order
     public string OrderName { get; set; }
     public string OrderAmount { get; set; }
     public string OrderAuthor { get; set; }
+    public DateTime CreationDate { get; set; }
 }

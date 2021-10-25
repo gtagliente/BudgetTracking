@@ -60,10 +60,12 @@ namespace BudgetTracking.Account
                 {
                     var user = manager.FindById(User.Identity.GetUserId());
                     signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                    Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
+                    MessageBox.Show(this,"Password succesfully changed ");
+                    Response.Redirect("~/Default.aspx");
                 }
                 else
                 {
+                    MessageBox.Show(this, "Error while changing password ");
                     AddErrors(result);
                 }
             }
@@ -78,6 +80,8 @@ namespace BudgetTracking.Account
                 IdentityResult result = manager.AddPassword(User.Identity.GetUserId(), password.Text);
                 if (result.Succeeded)
                 {
+                    MessageBox.Show(this, "Password succesfully set ");
+
                     Response.Redirect("~/Account/Manage?m=SetPwdSuccess");
                 }
                 else
@@ -93,6 +97,19 @@ namespace BudgetTracking.Account
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+    }
+
+    public static class MessageBox
+    {
+        public static void Show(this Page Page, String Message)
+        {
+            Page.ClientScript.RegisterStartupScript(
+                Page.GetType(),
+                "MessageBox",
+                "<script language='javascript'>alert('" + Message + "');</script>"
+                );
         }
     }
 }

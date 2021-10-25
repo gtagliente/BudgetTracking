@@ -2,52 +2,46 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OrdersContentPlaceHolder" runat="server">
 
-    <div class="input-group">
-        <div class="form-outline">
-            <button type="button" class="btn btn-light" data-toggle="modal" data-target=".bd-filter-modal-lg">Filters</button>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <%-- Grid System. fonti:
+        https://www.bootdey.com/snippets/view/bs4-image-box 
+    --%>
+    <div class="row">
+        <div class="col-md-6 col-xl-3">
+            <div class="image-box image-box--shadowed white-bg style-2 mb-4">
+                <div class="overlay-container">
+                    <img src="https://pnp.github.io/sp-dev-fx-controls-react/assets/BarChart.png" alt="" style="height:200px; width:380px">
+                    <a href="#" class="overlay-link"></a>
+                </div>
+                <div class="body">
+                    <h5 class="font-weight-bold my-2">Medie Mensili</h5>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-6 text-right">
+                            <a href="/DataVisualization/MonthExpenses.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary" runat="server" onclick="request(this)">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
 
-    <div class="modal fade bd-filter-modal-lg" tabindex="-1" role="dialog" aria-labelledby="filterModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                <div class="form-control">
-                    <div class="form-row">
-                        <p>Data</p>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input runat="server" id="flt_OrderDataFrom" name="flt_FromData" ClientIDMode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="Da" />
-                        </div>
-
-                        <div class="form-group">
-                            <input runat="server" id="flt_OrderDataTo" name="flt_ToData" ClientIDMode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="A" />
+        <div class="col-md-6 col-xl-3">
+            <div class="image-box image-box--shadowed white-bg style-2 mb-4">
+                <div class="overlay-container">
+                    <img src="https://ramonak.io/static/eb54dbc5916216c674253e424e094342/4e3e1/react-progress-bar.jpg" alt="" style="height:200px; width:380px">
+                    <a href="#" class="overlay-link"></a>
+                </div>
+                <div class="body">
+                    <h5 class="font-weight-bold my-2">Bilancio</h5>
+                    <div class="row d-flex align-items-center">
+                        <div class="col-6 text-right">
+                            <a href="/DataVisualization/Statements.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        function request(target) {
-            console.log("Ciao");
-            var filters = getFilters();
-            console.log(filters);
-            console.log(JSON.stringify(filters));
-            __doPostBack(target, JSON.stringify(filters))
-        }
 
-        function getFilters(){
-            return filters =
-            {
-                  "OrderDataFrom": $('#flt_OrderDataFrom').val()
-                , "OrderDataTo": $('#flt_OrderDataTo').val()
-            };
-        }
-    </script>
+
 </asp:Content>

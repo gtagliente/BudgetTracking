@@ -7,7 +7,7 @@ using System.Web;
 
 public class AverageModel
 {
-    public double Importo { get; set; }
+    public decimal Importo { get; set; }
     public string Author { get; set; }
 
     public string AuthorId { get; set; }

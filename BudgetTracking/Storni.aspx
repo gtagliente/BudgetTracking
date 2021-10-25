@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BudgetTracking.Default" MasterPageFile="~/Site1.Master" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Storni.aspx.cs" Inherits="BudgetTracking.Storni" MasterPageFile="~/Site1.Master" EnableEventValidation="false" %>
 
 <%@ MasterType VirtualPath="~/Site1.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OrdersContentPlaceHolder" runat="server">
-
     <style>
         .ListGridViewHeader {
             color:white;
@@ -55,17 +54,18 @@
 
                             <div class="form-control">
                                 <div class="form-row">
-                                    <p>Data</p>
+                                    <p>Data Storno</p>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <input runat="server" id="flt_OrderDataFrom" name="flt_OrderDataCreationFrom" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="Da" />
+                                        <input runat="server" id="flt_StornoDataFrom" name="flt_FromData" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="Da" />
                                     </div>
 
                                     <div class="form-group">
-                                        <input runat="server" id="flt_OrderDataTo" name="flt_OrderDataTo" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="A" />
+                                        <input runat="server" id="flt_StornoDataTo" name="flt_ToData" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="A" />
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="form-control">
@@ -74,53 +74,64 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group">
-                                        <input runat="server" id="flt_OrderDataCreationFrom" name="flt_OrderDataCreationFrom" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="Da" />
+                                        <input runat="server" id="flt_StornoCreationDataFrom" name="flt_StornoCreationDataFrom" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="Da" />
                                     </div>
 
                                     <div class="form-group">
-                                        <input runat="server" id="flt_OrderDataCreationTo" name="flt_OrderDataCreationTo" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="A" />
+                                        <input runat="server" id="flt_StornoCreationDataTo" name="flt_StornoCreationDataTo" clientidmode="static" class="datepicker-field form-control" dataformatstring="{0:dd/MM/yyyy}" placeholder="A" />
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <br />
-                                                                            
-
                 <div class="row">
                     <div class="col-md-12 col-lg-10 col-xl-8">
                         <div class="table-responsive">
                             <asp:GridView ID="GridView1" runat="server"
-                                AutoGenerateColumns="False" DataKeyNames="OrderId"
+                                AutoGenerateColumns="False" DataKeyNames="SystemId"
                                 OnPreRender="GridView1_PreRender"
                                 OnPageIndexChanging="GridView1_PageIndexChanging"
                                 CssClass="table table-bordered table-condensed table-hover table-striped" AllowPaging="True" PageSize="10">
-
+                                <%--<HeaderStyle CssClass="thead-dark" />--%>
                                 <Columns>
-                                    <asp:BoundField DataField="OrderId" HeaderText="ID"
+                                    <asp:BoundField DataField="SystemId" HeaderText="ID"
                                         ReadOnly="True" Visible="false"></asp:BoundField>
-                                    <asp:BoundField DataField="OrderDate" HeaderText="Data"
-                                        SortExpression="OrderDate" DataFormatString="{0:dd/MM/yyyy}">
+                                    <asp:BoundField DataField="Data" HeaderText="Data"
+                                        SortExpression="Data" DataFormatString="{0:dd/MM/yyyy}">
+                                        <%--<ItemStyle CssClass="visible-lg" />
+                                        <HeaderStyle CssClass="visible-lg" />--%>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="OrderName" HeaderText="Descrizione"
-                                        SortExpression="OrderName">
+                                    <asp:BoundField DataField="FromAuthorUserName" HeaderText="Da"
+                                        SortExpression="FromAuthorUserName">
+                                        <%--<ItemStyle CssClass="visible-lg" />
+                                        <HeaderStyle CssClass="visible-lg" />--%>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="OrderAmount" HeaderText="Totale"
-                                        SortExpression="OrderName">
+                                    <asp:BoundField DataField="ToAuthorUserName" HeaderText="A"
+                                        SortExpression="ToAuthorUserName">
+                                        <%-- <ItemStyle CssClass="hidden-xs" />
+                                        <HeaderStyle CssClass="hidden-xs" />--%>
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="OrderAuthor" HeaderText="Author"
-                                        SortExpression="OrderAuthor">
-                                    </asp:BoundField>
+                                    <asp:BoundField DataField="OrderAmount" HeaderText="Importo"
+                                        SortExpression="OrderAmount"></asp:BoundField>
+                                    <%-- <asp:CommandField ButtonType="Link" CausesValidation="false"
+                                        ShowDeleteButton="true" >--%>
+                                    <%--<ItemStyle CssClass="hidden-sm hidden-xs" />
+                                        <HeaderStyle CssClass="hidden-sm hidden-xs" />
+                                    </asp:CommandField>--%>
                                 </Columns>
                                 <HeaderStyle CssClass="ListGridViewHeader" HorizontalAlign="Left" />
                                 <AlternatingRowStyle CssClass="altRow" />
                                 <EditRowStyle CssClass="warning" />
                             </asp:GridView>
+
                         </div>
                     </div>
                 </div>
+            <%--</div>--%>
         </form>
     </main>
     <script type="text/javascript">
@@ -132,15 +143,11 @@
         function getFilters() {
             return filters =
             {
-                "OrderDataFrom": $('#flt_OrderDataFrom').val()
-                , "OrderDataTo": $('#flt_OrderDataTo').val()
-                , "OrderDataCreationFrom": $('#flt_OrderDataCreationFrom').val()
-                , "OrderDataCreationTo": $('#flt_OrderDataCreationTo').val()
+                "StornoDataFrom": $('#flt_StornoDataFrom').val()
+                , "StornoDataTo": $('#flt_StornoDataTo').val()
+                , "StornoDataCreationFrom": $('#flt_StornoCreationDataFrom').val()
+                , "StornoDataCreationTo": $('#flt_StornoCreationDataTo').val()
             };
-        }
-
-        function test() {
-            console.log("test");
         }
     </script>
 </asp:Content>

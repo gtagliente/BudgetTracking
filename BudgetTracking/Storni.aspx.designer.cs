@@ -11,44 +11,44 @@ namespace BudgetTracking
 {
 
 
-    public partial class Default
+    public partial class Storni
     {
 
         /// <summary>
-        /// Controllo flt_OrderDataFrom.
+        /// Controllo flt_StornoDataFrom.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataFrom;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_StornoDataFrom;
 
         /// <summary>
-        /// Controllo flt_OrderDataTo.
+        /// Controllo flt_StornoDataTo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataTo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_StornoDataTo;
 
         /// <summary>
-        /// Controllo flt_OrderDataCreationFrom.
+        /// Controllo flt_StornoCreationDataFrom.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataCreationFrom;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_StornoCreationDataFrom;
 
         /// <summary>
-        /// Controllo flt_OrderDataCreationTo.
+        /// Controllo flt_StornoCreationDataTo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_OrderDataCreationTo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText flt_StornoCreationDataTo;
 
         /// <summary>
         /// Controllo GridView1.

@@ -7,11 +7,11 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BudgetTracking
+namespace BudgetTracking.DataVisualization
 {
 
 
-    public partial class Statistiche
+    public partial class MonthExpenses
     {
     }
 }

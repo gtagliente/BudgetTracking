@@ -21,7 +21,7 @@ public static class StatsDB
         DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.SqlClient");
         using (DbConnection cn = provider.CreateConnection())
         {
-            double sum=0;
+            decimal sum=0;
             string sqlTotaliSpesa = @" SELECT A.USERNAME,A.ID,SUM(ORDER_AMOUNT) AS TOTSPESO " +
                                     "  from orders o inner join AspNetUsers a on (o.author = a.id) " +
                                     "  group by a.username,a.Id ";
@@ -37,7 +37,7 @@ public static class StatsDB
             da.Fill(dt);
 
             foreach (DataRow row in dt.Rows) 
-                sum += Convert.ToDouble(row["TOTSPESO"]);
+                sum += Convert.ToDecimal(row["TOTSPESO"]);
 
             
            
@@ -46,9 +46,9 @@ public static class StatsDB
              {
                  Author = Convert.ToString(dr["USERNAME"]),
                  AuthorId = Convert.ToString(dr["ID"]),
-                 Importo = (sum/3) - Convert.ToDouble(dr["TOTSPESO"]),
-                 Percentuale = Convert.ToInt32(Math.Abs((Convert.ToDouble(dr["TOTSPESO"]) - (sum / 3)) / sum) * 100),
-                 Positivo = (Convert.ToDouble(dr["TOTSPESO"]) - (sum / 3)) / sum > 0 ? true : false
+                 Importo = (sum/3) - Convert.ToDecimal(dr["TOTSPESO"]),
+                 Percentuale = Convert.ToInt32(Math.Abs((Convert.ToDecimal(dr["TOTSPESO"]) - (sum / 3)) / sum) * 100),
+                 Positivo = (Convert.ToDecimal(dr["TOTSPESO"]) - (sum / 3)) / sum > 0 ? true : false
              }).ToList();
 
             String sql = " SELECT * FROM STORNI ";
@@ -70,7 +70,7 @@ public static class StatsDB
                               Data = Convert.ToDateTime(dr["DATE"]),
                               FromAuthor = Convert.ToString(dr["FROM_AUTHOR"]),
                               ToAuthor = Convert.ToString(dr["TO_AUTHOR"]),
-                              OrderAmount = Convert.ToDouble(dr["ORDER_AMOUNT"])
+                              OrderAmount = Convert.ToDecimal(dr["ORDER_AMOUNT"])
                           }).ToList();
 
             AverageModel tmp;
@@ -99,11 +99,3 @@ public static class StatsDB
 
 }
 
-public class Storno
-{
-    public int SystemId { get; set; }
-    public DateTime Data { get; set; }
-    public string FromAuthor { get; set; }
-    public string ToAuthor { get; set; }
-    public double OrderAmount { get; set; }
-}

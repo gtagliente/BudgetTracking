@@ -6,17 +6,7 @@
 <head runat="server">
     <title>Budget Tracking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <script src="Scripts/jquery-3.0.0.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />-->
-
-
-    <%--    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />--%>
-    <%--<asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>--%>
-    <!-- Bootstrap CSS CDN -->
     
-    <%--<link href="Content/bootstrap.cosmo.min.css" rel="stylesheet" />--%>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -29,6 +19,13 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <script  src="/Scripts/Chart.min.js" ></script>
+      <script src="/Scripts/Chart.js" ></script>
+
+    <style>
+
+    </style>
 
 
 
@@ -64,28 +61,38 @@
 
                     <nav id="sidebar">
                         <div class="sidebar-header">
-                            <h3>Sidebar</h3>
+                            <h3>BudgetTracking</h3>
                         </div>
 
                         <ul class="list-unstyled components">
                             <li>
-                                <a href="Default.aspx">Lista spese</a>
+
+                                <a href="#ViewSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Visualizza</a>
+                                <ul class="collapse list-unstyled" id="ViewSubmenu">
+                                    <li>
+                                        <a href="/Default.aspx">Lista spese</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Storni.aspx">Lista storni</a>
+                                    </li>
+
+                                </ul>
                             </li>
                             <li>
 
                                 <a href="#EditSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Inserisci</a>
                                 <ul class="collapse list-unstyled" id="EditSubmenu">
                                     <li>
-                                        <a href="InserisciSpesa.aspx">Spesa</a>
+                                        <a href="/InserisciSpesa.aspx">Spesa</a>
                                     </li>
                                     <li>
-                                        <a href="InserisciStorno.aspx">Storno</a>
+                                        <a href="/InserisciStorno.aspx">Storno</a>
                                     </li>
 
                                 </ul>
                             </li>
                             <li>
-                                <a href="Statistiche.aspx">Statistiche</a>
+                                <a href="/Statistiche.aspx">Statistiche</a>
                             </li>
                             <li>
                                 <a href="#LoggedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hello, <%: HttpContext.Current.User.Identity.Name  %> !</a>

@@ -40,8 +40,9 @@ namespace BudgetTracking
             JavaScriptSerializer serializer1 = new JavaScriptSerializer();
             serializer1.RegisterConverters(new[] { new ExtendedJavaScriptConverter<Order>() });
             Order order = serializer1.Deserialize<Order>(Request.Form["__EVENTARGUMENT"]);
+            order.CreationDate = DateTime.Now;
             OrderDB.InsertOrder(order);
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("/Default.aspx");
         }
     }
 }

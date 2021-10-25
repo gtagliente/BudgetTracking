@@ -4,7 +4,16 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OrdersContentPlaceHolder" runat="server">
+    <style>
+        .btn-primary{
+            background: forestgreen!important;
+            border-color: forestgreen!important;
+        }
 
+        .btn-light{
+            border:0.5px solid black;
+        }
+    </style>
     <h1 class="login-form-main-message">Inserisci Spesa</h1>
 
 
@@ -96,6 +105,7 @@
         <script src="https://cdn.jsdelivr.net/autonumeric/2.0.0/autoNumeric.min.js"></script>
     <script type="text/javascript">
         function request() {
+            debugger;
             getRawNumerics();
             var params = getParams();
             //var v = $('#txtImporto').autoNumeric('get');

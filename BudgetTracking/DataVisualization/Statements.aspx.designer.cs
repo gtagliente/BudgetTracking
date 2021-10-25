@@ -7,34 +7,20 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BudgetTracking
+namespace BudgetTracking.DataVisualization
 {
 
 
-    public partial class InserisciStorno
+    public partial class Statements
     {
 
         /// <summary>
-        /// Controllo DetailsView1.
+        /// Controllo dlBalance.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
-
-        /// <summary>
-        /// Proprietà Master.
-        /// </summary>
-        /// <remarks>
-        /// Proprietà generata automaticamente.
-        /// </remarks>
-        public new BudgetTracking.Site1 Master
-        {
-            get
-            {
-                return ((BudgetTracking.Site1)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.DataList dlBalance;
     }
 }

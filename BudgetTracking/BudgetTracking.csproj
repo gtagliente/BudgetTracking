@@ -164,9 +164,14 @@
     <Content Include="Content\bootstrap.cosmo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="Content\style2.css" />
+    <Content Include="DataVisualization\MonthExpenses.aspx" />
+    <Content Include="DataVisualization\Statements.aspx" />
     <Content Include="InserisciSpesa.aspx" />
     <Content Include="InserisciStorno.aspx" />
+    <Content Include="Login\Account\ManagePassword.aspx" />
     <Content Include="Login\Account\OpenAuthProviders.ascx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\Register.aspx" />
@@ -175,6 +180,8 @@
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -299,6 +306,7 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\banner.jpg" />
     <Content Include="Statistiche.aspx" />
+    <Content Include="Storni.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -307,6 +315,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="DataVisualization\MonthExpenses.aspx.cs">
+      <DependentUpon>MonthExpenses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataVisualization\MonthExpenses.aspx.designer.cs">
+      <DependentUpon>MonthExpenses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataVisualization\Statements.aspx.cs">
+      <DependentUpon>Statements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataVisualization\Statements.aspx.designer.cs">
+      <DependentUpon>Statements.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -334,6 +356,14 @@
     <Compile Include="Logic\ExtendedJavaScriptConverter.cs" />
     <Compile Include="Logic\IFilterController.cs" />
     <Compile Include="Logic\SearchFilterController.cs" />
+    <Compile Include="Logic\StornoSearchFilterController.cs" />
+    <Compile Include="Login\Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login\Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +391,8 @@
     <Compile Include="Models\OrderDB.cs" />
     <Compile Include="Models\AverageModel.cs" />
     <Compile Include="Models\StatsDB.cs" />
+    <Compile Include="Models\Storno.cs" />
+    <Compile Include="Models\StornoSearchFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
@@ -383,6 +415,13 @@
     </Compile>
     <Compile Include="Statistiche.aspx.designer.cs">
       <DependentUpon>Statistiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Storni.aspx.cs">
+      <DependentUpon>Storni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Storni.aspx.designer.cs">
+      <DependentUpon>Storni.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
