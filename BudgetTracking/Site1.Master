@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Budget Tracking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -20,11 +20,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <script  src="/Scripts/Chart.min.js" ></script>
-      <script src="/Scripts/Chart.js" ></script>
+    <script src="/Scripts/Chart.min.js"></script>
+    <script src="/Scripts/Chart.js"></script>
 
     <style>
-
     </style>
 
 
@@ -38,7 +37,7 @@
 
                     <nav id="sidebar">
                         <div class="sidebar-header">
-                            <h3>Sidebar</h3>
+                            <h3>BudgetTracking</h3>
                         </div>
 
                         <ul class="list-unstyled components">
@@ -116,15 +115,11 @@
 
             <div id="content">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                            <span>Toggle Sidebar</span>
-                        </button>
-                    </div>
-                </nav>
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
                 <asp:ContentPlaceHolder ID="OrdersContentPlaceHolder" runat="server">
                     <p>
@@ -150,7 +145,7 @@
             $(document).ready(function () {
                 $('#sidebarCollapse').on('click', function () {
                     $('#sidebar').toggleClass('active');
-
+                    $(this).toggleClass('active');
                 });
                 $('.datepicker-field').datepicker({ dateFormat: 'dd/mm/yy' });
 
@@ -161,19 +156,19 @@
             });
 
             function getRawNumerics() {
-              
-                    var form = $(this);
-                    $('.numberInput').each(function (i) {
-                        var self = $(this);
-                        try {
-                            var v = self.autoNumeric('get');
-                            self.autoNumeric('destroy');
-                            self.val(v);
-                        } catch (err) {
-                            console.log("Not an autonumeric field: " + self.attr("name"));
-                        }
-                    });
-                    return true;
+
+                var form = $(this);
+                $('.numberInput').each(function (i) {
+                    var self = $(this);
+                    try {
+                        var v = self.autoNumeric('get');
+                        self.autoNumeric('destroy');
+                        self.val(v);
+                    } catch (err) {
+                        console.log("Not an autonumeric field: " + self.attr("name"));
+                    }
+                });
+                return true;
             }
 
         </script>
