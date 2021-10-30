@@ -13,9 +13,10 @@ namespace BudgetTracking
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        public string basePath;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             basePath = Request.ApplicationPath;
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

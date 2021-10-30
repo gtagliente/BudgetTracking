@@ -35,7 +35,7 @@ namespace BudgetTracking
             storno.FromAuthor = this.UserId;
             storno.CreationDate = DateTime.Now;
             OrderDB.InsertStorno(storno);
-            Response.Redirect("/Storni.aspx");
+            Response.Redirect(String.Concat(Request.ApplicationPath.Equals("/") ? "" : Request.ApplicationPath,"/Storni.aspx"));
         }
     }
 

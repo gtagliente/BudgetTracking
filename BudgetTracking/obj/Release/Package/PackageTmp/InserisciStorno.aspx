@@ -4,7 +4,16 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="OrdersContentPlaceHolder" runat="server">
+    <style>
+        .btn-primary{
+            background: forestgreen!important;
+            border-color: forestgreen!important;
+        }
 
+        .btn-light{
+            border:0.5px solid black;
+        }
+    </style>
     <h1 class="login-form-main-message">Inserisci Storno</h1>
 
 
@@ -12,8 +21,8 @@
         <form id="form1" class="main-login-form">
 
             <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True"
-                DataSourceID="ObjectDataSource1" AutoGenerateRows="False"
-                DefaultMode="Insert" DataKeyNames="OrderID" BorderStyle="None" GridLines="None">
+                AutoGenerateRows="False" DefaultMode="Insert" 
+                DataKeyNames="OrderID" BorderStyle="None" GridLines="None" ClientIDMode="Static">
                 <Fields>
                     <asp:TemplateField>
                         <InsertItemTemplate>
@@ -21,7 +30,7 @@
                                 <div class="form-group">
                                     <label for="txtData" class="sr-only">Data</label>
                                     <div class="col-md-12 col-sm-12 d-inline-block">
-                                        <asp:TextBox runat="server" ID="txtData" CssClass="datepicker-field form-control" Text='<%#  Bind("Data") %>' DataFormatString="{0:dd/MMM/yyyy}" placeholder="Data"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtData" CssClass="datepicker-field form-control" Text='<%#  Bind("Data") %>' DataFormatString="{0:dd/MM/yyyy}" placeholder="Data"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -29,14 +38,6 @@
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <InsertItemTemplate>
-                            <%--<div class="col-xl-12 d-flex">
-                                <div class="form-group">
-                                    <label for="txtDescrizione" class="sr-only">Descrizione</label>
-                                    <div class="col-md-12 col-sm-12 d-inline-block">
-                                        <asp:TextBox runat="server" ID="txtName" CssClass="form-control" Text='<%#  Bind("OrderName") %>' placeholder="Descrizione"></asp:TextBox>
-                                    </div>
-                                </div>
-                            </div>--%>
                             <div class="col-xl-12 d-flex">
                                 <div class="form-group">
                                     <label for="txtData" class="sr-only">Beneficiario</label>
@@ -66,7 +67,7 @@
                                 <div class="form-group">
                                     <asp:Button ID="BtnInsert" CssClass="btn btn-primary"
                                         CommandName="Insert"
-                                        runat="server" Text="Inserisci" />
+                                        runat="server" Text="Inserisci" onclientclick="request()"/>
                                 </div>
                             </div>
                         </InsertItemTemplate>
@@ -85,7 +86,7 @@
                 <RowStyle BorderStyle="None" />
             </asp:DetailsView>
 
-            <asp:ObjectDataSource runat="server" ID="ObjectDataSource1"
+          <%--  <asp:ObjectDataSource runat="server" ID="ObjectDataSource1"
                 DataObjectTypeName="Storno"
                 InsertMethod="InsertStorno"
                 TypeName="OrderDB"
@@ -93,7 +94,7 @@
                 <InsertParameters>
                     <asp:Parameter Name="storno" Type="Object"></asp:Parameter>
                 </InsertParameters>
-            </asp:ObjectDataSource>
+            </asp:ObjectDataSource>--%>
         </form>
     </div>
 
@@ -126,6 +127,24 @@
 
         function setToAuthor() {
             $('#txtToAuthor').val($('#ddlToAuthor').val());
+        }
+
+
+        function request() {
+            getRawNumerics();
+            var params = getParams();
+            console.log(params);
+            console.log(JSON.stringify(params));
+            __doPostBack("InsertStorno", JSON.stringify(params))
+        }
+
+        function getParams() {
+            return params =
+            {
+                "Data": $('#txtData').val()
+                , "ToAuthor": $('#ddlToAuthor').val()
+                , "OrderAmount": $('#txtImporto').val()
+            };
         }
     </script>
 

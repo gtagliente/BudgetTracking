@@ -42,7 +42,7 @@ namespace BudgetTracking
             Order order = serializer1.Deserialize<Order>(Request.Form["__EVENTARGUMENT"]);
             order.CreationDate = DateTime.Now;
             OrderDB.InsertOrder(order);
-            Response.Redirect("/Default.aspx");
+            Response.Redirect(String.Concat(Request.ApplicationPath.Equals("/") ? "" : Request.ApplicationPath,"/Default.aspx"));
         }
     }
 }

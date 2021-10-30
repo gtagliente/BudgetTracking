@@ -6,7 +6,7 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Admin\Desktop\GT\Nuova cartella\BudgetTracking\BudgetTracking\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -16,10 +16,10 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
       <publishTime>02/22/2013 08:43:40</publishTime>
     </File>
     <File Include="bin/BudgetTracking.dll">
-      <publishTime>05/26/2021 19:24:52</publishTime>
+      <publishTime>10/30/2021 17:31:54</publishTime>
     </File>
     <File Include="bin/BudgetTracking.pdb">
-      <publishTime>05/26/2021 19:24:52</publishTime>
+      <publishTime>10/30/2021 17:31:54</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>02/25/2014 01:34:42</publishTime>
@@ -45,6 +45,9 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
       <publishTime>11/25/2019 10:57:50</publishTime>
     </File>
+    <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>10/19/2020 18:40:36</publishTime>
+    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>02/21/2021 10:57:48</publishTime>
     </File>
@@ -67,7 +70,7 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/03/2014 20:33:56</publishTime>
+      <publishTime>03/17/2021 20:03:36</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
@@ -108,6 +111,30 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>02/21/2021 10:57:50</publishTime>
     </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>02/19/2020 10:05:18</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>02/19/2020 10:05:18</publishTime>
+    </File>
+    <File Include="bin/System.Numerics.Vectors.dll">
+      <publishTime>05/15/2018 13:29:44</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/19/2020 18:46:30</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>02/16/2021 21:53:20</publishTime>
+    </File>
+    <File Include="bin/System.Text.Json.dll">
+      <publishTime>03/16/2021 22:34:50</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.Extensions.dll">
+      <publishTime>02/19/2020 10:05:18</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>05/15/2018 13:29:52</publishTime>
+    </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
@@ -138,6 +165,12 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
     <File Include="Content/bootstrap-reboot.min.css.map">
       <publishTime>02/21/2021 20:23:48</publishTime>
     </File>
+    <File Include="Content/bootstrap.cosmo.css">
+      <publishTime>05/31/2021 15:21:29</publishTime>
+    </File>
+    <File Include="Content/bootstrap.cosmo.min.css">
+      <publishTime>05/31/2021 15:21:29</publishTime>
+    </File>
     <File Include="Content/bootstrap.css">
       <publishTime>02/21/2021 20:23:48</publishTime>
     </File>
@@ -150,14 +183,26 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>02/21/2021 20:23:48</publishTime>
     </File>
+    <File Include="Content/Chart.css">
+      <publishTime>09/12/2021 16:28:12</publishTime>
+    </File>
+    <File Include="Content/Chart.min.css">
+      <publishTime>09/12/2021 16:28:12</publishTime>
+    </File>
     <File Include="Content/site.css">
-      <publishTime>03/20/2021 11:21:44</publishTime>
+      <publishTime>09/19/2021 12:15:53</publishTime>
     </File>
     <File Include="Content/style2.css">
-      <publishTime>04/18/2021 12:00:54</publishTime>
+      <publishTime>10/25/2021 23:30:24</publishTime>
+    </File>
+    <File Include="DataVisualization/MonthExpenses.aspx">
+      <publishTime>09/30/2021 08:08:29</publishTime>
+    </File>
+    <File Include="DataVisualization/Statements.aspx">
+      <publishTime>09/21/2021 21:58:58</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>05/26/2021 19:16:59</publishTime>
+      <publishTime>09/29/2021 23:34:46</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>05/02/2021 10:00:57</publishTime>
@@ -166,10 +211,13 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
       <publishTime>02/21/2021 10:57:42</publishTime>
     </File>
     <File Include="InserisciSpesa.aspx">
-      <publishTime>05/22/2021 11:07:14</publishTime>
+      <publishTime>09/30/2021 08:14:05</publishTime>
     </File>
     <File Include="InserisciStorno.aspx">
-      <publishTime>05/26/2021 11:13:04</publishTime>
+      <publishTime>09/30/2021 08:13:03</publishTime>
+    </File>
+    <File Include="Login/Account/ManagePassword.aspx">
+      <publishTime>08/01/2021 10:58:28</publishTime>
     </File>
     <File Include="Login/Account/OpenAuthProviders.ascx">
       <publishTime>05/02/2021 09:52:25</publishTime>
@@ -181,7 +229,7 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
       <publishTime>05/02/2021 11:54:41</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/02/2021 09:38:48</publishTime>
+      <publishTime>09/12/2021 16:28:12</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>02/21/2021 20:23:48</publishTime>
@@ -206,6 +254,12 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
     </File>
     <File Include="Scripts/bootstrap.min.js.map">
       <publishTime>02/21/2021 20:23:46</publishTime>
+    </File>
+    <File Include="Scripts/Chart.js">
+      <publishTime>09/12/2021 16:28:11</publishTime>
+    </File>
+    <File Include="Scripts/Chart.min.js">
+      <publishTime>09/12/2021 16:28:11</publishTime>
     </File>
     <File Include="Scripts/esm/popper-utils.js">
       <publishTime>02/21/2021 20:23:44</publishTime>
@@ -499,13 +553,19 @@ modificando il file MSBuild. Per altre informazioni su questo argomento, vedere 
       <publishTime>05/01/2021 18:57:35</publishTime>
     </File>
     <File Include="Site1.Master">
-      <publishTime>05/23/2021 16:21:00</publishTime>
+      <publishTime>10/27/2021 23:19:26</publishTime>
+    </File>
+    <File Include="Statistiche.aspx">
+      <publishTime>10/27/2021 22:25:49</publishTime>
+    </File>
+    <File Include="Storni.aspx">
+      <publishTime>09/29/2021 23:38:21</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
       <publishTime>05/01/2021 18:57:32</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/26/2021 19:24:54</publishTime>
+      <publishTime>10/27/2021 21:54:08</publishTime>
     </File>
   </ItemGroup>
 </Project>

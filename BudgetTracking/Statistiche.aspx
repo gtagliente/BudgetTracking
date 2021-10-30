@@ -18,7 +18,7 @@
                     <h5 class="font-weight-bold my-2">Medie Mensili</h5>
                     <div class="row d-flex align-items-center">
                         <div class="col-6 text-right">
-                            <a href="/DataVisualization/MonthExpenses.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
+                            <a href="DataVisualization/MonthExpenses.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                     <h5 class="font-weight-bold my-2">Bilancio</h5>
                     <div class="row d-flex align-items-center">
                         <div class="col-6 text-right">
-                            <a href="/DataVisualization/Statements.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
+                            <a href="DataVisualization/Statements.aspx" class="btn radius-50 btn-gray-transparent btn-animated">Visualizza <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

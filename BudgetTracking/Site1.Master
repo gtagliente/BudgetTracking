@@ -17,11 +17,17 @@
     <!-- Our Custom CSS -->
 
     <!-- Font Awesome JS -->
+    <script>
+        function baseUrl() {
+            var href = window.location.href.split('/');
+            return href[0] + '//' + href[2] + '/';
+        }
+    </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <script src="/Scripts/Chart.min.js"></script>
-    <script src="/Scripts/Chart.js"></script>
+    <script src="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Scripts/Chart.min.js"></script>
+    <script src="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Scripts/Chart.js"></script>
 
     <style>
     </style>
@@ -45,10 +51,10 @@
                                 <a href="#NoLoggedSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Account</a>
                                 <ul class="collapse list-unstyled" id="NoLoggedSubMenu">
                                     <li>
-                                        <a href="/Login/Login">Login</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Login/Login">Login</a>
                                     </li>
                                     <li>
-                                        <a href="/Login/Register">Registrazione</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Login/Register">Registrazione</a>
                                     </li>
 
                                 </ul>
@@ -69,10 +75,10 @@
                                 <a href="#ViewSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Visualizza</a>
                                 <ul class="collapse list-unstyled" id="ViewSubmenu">
                                     <li>
-                                        <a href="/Default.aspx">Lista spese</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Default.aspx">Lista spese</a>
                                     </li>
                                     <li>
-                                        <a href="/Storni.aspx">Lista storni</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Storni.aspx">Lista storni</a>
                                     </li>
 
                                 </ul>
@@ -82,16 +88,16 @@
                                 <a href="#EditSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Inserisci</a>
                                 <ul class="collapse list-unstyled" id="EditSubmenu">
                                     <li>
-                                        <a href="/InserisciSpesa.aspx">Spesa</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/InserisciSpesa.aspx">Spesa</a>
                                     </li>
                                     <li>
-                                        <a href="/InserisciStorno.aspx">Storno</a>
+                                        <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/InserisciStorno.aspx">Storno</a>
                                     </li>
 
                                 </ul>
                             </li>
                             <li>
-                                <a href="/Statistiche.aspx">Statistiche</a>
+                                <a href="<%=Request.ApplicationPath.Equals("/")?"":Request.ApplicationPath%>/Statistiche.aspx">Statistiche</a>
                             </li>
                             <li>
                                 <a href="#LoggedSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Hello, <%: HttpContext.Current.User.Identity.Name  %> !</a>
@@ -143,6 +149,8 @@
 
         <script type="text/javascript">
             $(document).ready(function () {
+                console.log(baseUrl());
+                console.log('PathBase: '+ '<%=Request.ApplicationPath%>');
                 $('#sidebarCollapse').on('click', function () {
                     $('#sidebar').toggleClass('active');
                     $(this).toggleClass('active');

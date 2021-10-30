@@ -19,13 +19,13 @@ namespace BudgetTracking.Logic
             string sqlWhere = "";
 
             if (srcFilter.StornoDataFrom != null)
-                sqlWhere += String.Format(" AND {0}.DATE>=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataFrom.ToString());
+                sqlWhere += String.Format(" AND COALESCE({0}.DATE,DATEADD(year, -1, getdate()))>=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataFrom.ToString());
             if (srcFilter.StornoDataTo != null)
-                sqlWhere += String.Format(" AND {0}.DATE<=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataTo.ToString());
+                sqlWhere += String.Format(" AND COALESCE({0}.DATE,DATEADD(year, +1, getdate()))<=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataTo.ToString());
             if (srcFilter.StornoDataCreationFrom != null)
-                sqlWhere += String.Format(" AND {0}.CREATION_DATE>=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataCreationFrom.ToString());
+                sqlWhere += String.Format(" AND COALESCE({0}.CREATION_DATE,DATEADD(year, -1, getdate()))>=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataCreationFrom.ToString());
             if (srcFilter.StornoDataCreationTo != null)
-                sqlWhere += String.Format(" AND {0}.CREATION_DATE<=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataCreationTo.ToString());
+                sqlWhere += String.Format(" AND COALESCE({0}.CREATION_DATE,DATEADD(year, +1, getdate()))<=CAST('{1}' AS DATE) ", tableAlias, srcFilter.StornoDataCreationTo.ToString());
 
             return sqlWhere;
         }
